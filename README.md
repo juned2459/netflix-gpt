@@ -2,7 +2,10 @@
 
 - Create React App
 - Configured TailwindCSS
-- 
+- Header
+- Login Form
+- Sign up Form
+
 
 
 
@@ -25,3 +28,18 @@
 - NetFlixGPT(after authentication)
         - Search Bar
         - Movie Suggestions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+use (Formic Library) for big forms in react
