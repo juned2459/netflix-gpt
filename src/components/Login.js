@@ -7,14 +7,13 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BACKGROUND_IMAGE, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const name = useRef(null);
@@ -24,7 +23,6 @@ const Login = () => {
   const handleButtonClick = () => {
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
-
     if (message) return; // otherWise then sinUp/signIn
 
     if (!isSignInForm) {
@@ -38,8 +36,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdIizxMXo0p9uWRUqti34H_oWO4O_oaNBMr1GDAPmyeKJMkVziYr_JnU3yNdCtCNPRu8U&usqp=CAU",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -51,7 +48,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -70,10 +66,8 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
+          //Signed in
           const user = userCredential.user;
-          console.log(user);
-
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -92,7 +86,7 @@ const Login = () => {
 
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/fb548c0a-8582-43c5-9fba-cd98bf27452f/IN-en-20240326-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={BACKGROUND_IMAGE}
           alt="logo"
         />
       </div>
