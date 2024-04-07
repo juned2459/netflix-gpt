@@ -29,6 +29,12 @@
 - Update Store with Trailer Video Data
 - Embedded the Youtube video and make it autoplay and mute
 - Tailwind Classes to make main Container look awesome
+- Build Secondary Component
+- Build Movie List 
+- Build Movie Card
+- TMDB Image CDN URL
+- Made the Browser page amazing with Tailwind CSS
+- usePopularMovies, useNowPlayingMovies, useTopRatedMovies, useUpcomingMovies Custom Hooks
 
 
 
@@ -48,15 +54,18 @@
         - Title & Description
         - Movie Suggestions
               - MovieLists * N
-
-     {/*
+ 
       MainContainer
                 - VideoBackground
                 - VideoTitle
-      SecondaryContainer
-                - MovieList * n
-                    - cards * n
-      */}         
+                
+      secondary container
+                - MovieList- Popular
+                - MovieCards*n 
+            - MovieList- Now Playing
+            - MovieList- Trending
+            - MovieList- Horror
+    
 
 - NetFlixGPT(after authentication)
         - Search Bar
@@ -64,6 +73,7 @@
 
 
 
+    
 
 
 
