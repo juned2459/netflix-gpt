@@ -1,5 +1,5 @@
+Live App Link :- https://netflixgpt-10322.firebaseapp.com/
 # Netflix GPT - flow
-
 - Create React App
 - Configured TailwindCSS
 - Header
@@ -35,6 +35,10 @@
 - TMDB Image CDN URL
 - Made the Browser page amazing with Tailwind CSS
 - usePopularMovies, useNowPlayingMovies, useTopRatedMovies, useUpcomingMovies Custom Hooks
+- GPT search page
+- GPT search Bar
+- * Multi Language Feature in our App
+
 
 
 
